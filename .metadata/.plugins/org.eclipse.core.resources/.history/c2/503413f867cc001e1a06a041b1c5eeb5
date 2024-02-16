@@ -1,7 +1,5 @@
 package br.com.eduardohmf;
 
-import br.com.eduardohmf.poo.Carro;
-
 public class Principal {
 
 	public static void main(String[] args) {
@@ -39,9 +37,9 @@ public class Principal {
 		default:
 			System.out.println("default");
 			break;
+
 		}
-		
-		Carro carro = new Carro();
-		carro.andar();
+
 	}
+
 }

@@ -1,0 +1,8 @@
+package br.com.eduardohmf.poo;
+
+public class Carro {
+	// Atributos
+	private String cor;
+	private String marca;
+	private String modelo;
+}

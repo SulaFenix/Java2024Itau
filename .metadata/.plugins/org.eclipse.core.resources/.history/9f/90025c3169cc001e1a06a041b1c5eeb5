@@ -42,6 +42,6 @@ public class Principal {
 		}
 		
 		Carro carro = new Carro();
-		carro.andar();
+		carro
 	}
 }
