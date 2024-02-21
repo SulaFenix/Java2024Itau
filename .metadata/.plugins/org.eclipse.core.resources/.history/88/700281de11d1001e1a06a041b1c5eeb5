@@ -205,16 +205,6 @@ public class Principal {
 		for(Map.Entry<String, String> entry : paises.entrySet()) {
 			System.out.println("# " + entry.getKey() + " | " + entry.getValue());
 		}
-		
-		System.out.println("-------------------------------------------------");
-		
-		System.out.println(paises.get("FRANÇA"));
-		paises.put("CHINA", "Pequim");
-		
-		if(paises.containsKey("CHINA"))
-			System.out.println(paises.get("CHINA"));
-		else
-			System.out.println("Não tem país CHINA");
 						
 
 	}

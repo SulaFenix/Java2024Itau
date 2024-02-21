@@ -4,12 +4,8 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 import br.com.eduardohmf.conta.ContaBancaria;
@@ -180,41 +176,8 @@ public class Principal {
 		System.out.println("-------------------------------------------------");
 		
 		List<Pessoa> nomesFiltrados = pessoas.stream()
-				.filter(pessoa -> "Ana".contains(pessoa.getNome()))
+				.filter(pessoa -> "Ana".equals(pessoa.getNome()))
 				.collect(Collectors.toList());
-		
-		nomesFiltrados.forEach(System.out::println);
-		
-		System.out.println("-------------------------------------------------");
-		
-		Set<String> alunos = new HashSet<String>();
-		alunos.add("Ana");
-		alunos.add("Tiao");
-		alunos.add("Jose");
-		alunos.add("Ana");
-		alunos.forEach(System.out::println);
-		
-		System.out.println("-------------------------------------------------");
-		
-		Map<String, String> paises = new HashMap<>();
-		paises.put("BRASIL", "Brasília");
-		paises.put("PORTUGAL", "Lisboa");
-		paises.put("FRANÇA", "Paris");
-		paises.put("ARGENTINA", "Buenos Aires");
-		
-		for(Map.Entry<String, String> entry : paises.entrySet()) {
-			System.out.println("# " + entry.getKey() + " | " + entry.getValue());
-		}
-		
-		System.out.println("-------------------------------------------------");
-		
-		System.out.println(paises.get("FRANÇA"));
-		paises.put("CHINA", "Pequim");
-		
-		if(paises.containsKey("CHINA"))
-			System.out.println(paises.get("CHINA"));
-		else
-			System.out.println("Não tem país CHINA");
 						
 
 	}

@@ -3,18 +3,11 @@ package br.com.eduardohmf;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 import br.com.eduardohmf.conta.ContaBancaria;
 import br.com.eduardohmf.exception.LimiteCreditoExcedidoException;
-import br.com.eduardohmf.model.Pessoa;
 import br.com.eduardohmf.poo.Aluno;
 import br.com.eduardohmf.poo.Carro;
 
@@ -143,79 +136,6 @@ public class Principal {
 			String nome1 = it.next();
 			System.out.println("* " + nome1);
 		}
-
-		System.out.println("-------------------------------------------------");
-
-		Collections.sort(nomes);
-		it = nomes.iterator();
-		while (it.hasNext()) {
-			String nome1 = it.next();
-			System.out.println("* " + nome1);
-		}
-
-		System.out.println("-------------------------------------------------");
-
-		Pessoa p = new Pessoa(1, "Nome 1", "email1");
-		System.out.println(p.toString());
-
-		System.out.println("-------------------------------------------------");
-
-		Pessoa p1 = new Pessoa(1, "Ana", "email1");
-		Pessoa p2 = new Pessoa(2, "Maria", "email2");
-		Pessoa p3 = new Pessoa(3, "Jose", "email3");
-		Pessoa p4 = new Pessoa(4, "Tiao", "email4");
-		Pessoa p5 = new Pessoa(5, "Ana Maria", "email5");
-
-		List<Pessoa> pessoas = new ArrayList<Pessoa>();
-		pessoas.add(p1);
-		pessoas.add(p2);
-		pessoas.add(p3);
-		pessoas.add(p4);
-		pessoas.add(p5);
-
-		for (Pessoa pessoa : pessoas) {
-			System.out.println("- " + pessoa.toString());
-		}
-		
-		System.out.println("-------------------------------------------------");
-		
-		List<Pessoa> nomesFiltrados = pessoas.stream()
-				.filter(pessoa -> "Ana".contains(pessoa.getNome()))
-				.collect(Collectors.toList());
-		
-		nomesFiltrados.forEach(System.out::println);
-		
-		System.out.println("-------------------------------------------------");
-		
-		Set<String> alunos = new HashSet<String>();
-		alunos.add("Ana");
-		alunos.add("Tiao");
-		alunos.add("Jose");
-		alunos.add("Ana");
-		alunos.forEach(System.out::println);
-		
-		System.out.println("-------------------------------------------------");
-		
-		Map<String, String> paises = new HashMap<>();
-		paises.put("BRASIL", "Brasília");
-		paises.put("PORTUGAL", "Lisboa");
-		paises.put("FRANÇA", "Paris");
-		paises.put("ARGENTINA", "Buenos Aires");
-		
-		for(Map.Entry<String, String> entry : paises.entrySet()) {
-			System.out.println("# " + entry.getKey() + " | " + entry.getValue());
-		}
-		
-		System.out.println("-------------------------------------------------");
-		
-		System.out.println(paises.get("FRANÇA"));
-		paises.put("CHINA", "Pequim");
-		
-		if(paises.containsKey("CHINA"))
-			System.out.println(paises.get("CHINA"));
-		else
-			System.out.println("Não tem país CHINA");
-						
 
 	}
 }
