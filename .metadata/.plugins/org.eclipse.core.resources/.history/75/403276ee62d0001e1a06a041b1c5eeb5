@@ -4,8 +4,6 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.Iterator;
 
-import br.com.eduardohmf.conta.ContaBancaria;
-import br.com.eduardohmf.exception.LimiteCreditoExcedidoException;
 import br.com.eduardohmf.poo.Aluno;
 import br.com.eduardohmf.poo.Carro;
 
@@ -94,19 +92,11 @@ public class Principal {
 			lerArquivo("");
 		} catch (FileNotFoundException e) {
 			System.out.println(" - Erro ao ler arquivo: " + e.getMessage());
-			// e.printStackTrace();
+			//e.printStackTrace();
 		}
-
+		
 		System.out.println("** Continuou 02");
 		System.out.println("-------------------------------------------------");
-
-		ContaBancaria conta = new ContaBancaria();
-		try {
-			conta.fazerSaque(1500.0);
-		} catch (LimiteCreditoExcedidoException e) {
-			System.out.println(e.getMessage());
-			System.out.println("Quantia excedida: " + e.getQuantiaExcedida());
-		}
 
 	}
 }
