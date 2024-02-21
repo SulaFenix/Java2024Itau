@@ -40,5 +40,22 @@ public class Carro {
 		this.modelo = modelo;
 	}
 	
+	//Construtor
+	public Carro(String cor, String marca, String modelo) {
+		this.cor = cor;
+		this.marca = marca;
+		this.modelo = modelo;
+	}
+	
+	public Carro(String marca, String modelo) {
+		this.cor = "Branca";
+		this.marca = marca;
+		this.modelo = modelo;
+	}
+	
+	@Override
+	public String toString() {
+		return "Cor = " + cor + "\nMarca = " + marca + "\nModelo = " + modelo;
+	}
 	
 }

@@ -1,13 +1,18 @@
 package br.com.eduardohmf;
 
+import br.com.eduardohmf.poo.Aluno;
 import br.com.eduardohmf.poo.Carro;
+
+//import br.com.eduardohmf.poo.Carro;
 
 public class Principal {
 
 	public static void main(String[] args) {
+		
 		System.out.println("Bom dia turma");
+		System.out.println("-------------------------------------------------");
 
-		boolean condicao = true;
+		/*boolean condicao = true;
 		if (!condicao) {
 			System.out.println("Condição verdadeira");
 		} else {
@@ -41,7 +46,30 @@ public class Principal {
 			break;
 		}
 		
-		Carro carro = new Carro();
-		carro.andar();
+		
+		System.out.println("-------------------------------------------------");
+		Carro carro = new Carro("verde", "BYD", "Plus");
+		System.out.println(carro.toString());
+		System.out.println("-------------------------------------------------");
+		carro.setCor("Azul");
+		System.out.println(carro.toString());
+		System.out.println("-------------------------------------------------");
+		
+		Carro jao = new Carro("Fiat", "Mobi");
+		System.out.println(jao.toString());
+		System.out.println("-------------------------------------------------");
+		*/
+		
+		Aluno aluno1 = new Aluno("0001", "08/02/2024", "Fulano", "fulano@indra.com");
+		/*aluno1.setNome("Fulano");
+		aluno1.setEmail("fulano@indra.com");
+		aluno1.setDtMatricula("08/02/2024");
+		aluno1.setMatricula("0001");*/
+		System.out.println(aluno1.toString());
+		System.out.println("-------------------------------------------------");
+		
+		Aluno aluno2 = new Aluno("0002", "08/02/2024", "Beltrano", "beltrano@indra.com", "61 00000-0000");
+		System.out.println(aluno2.toString());
+		System.out.println("-------------------------------------------------");
 	}
 }
