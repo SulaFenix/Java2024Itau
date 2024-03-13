@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
@@ -13,7 +14,7 @@ public class WebController {
 	
 	@GetMapping("/")
 	public String showForm(Model model) {
-		model.addAttribute("modelOperacoes", List.of("Soma", "Subtracao"));
+		model.addAttribute("modelOperacoes", List.of("Soma", "Subtracao", "Multiplicacao", "Divisao"));
 		return "index";
 	}
 	
@@ -31,20 +32,36 @@ public class WebController {
 		String resposta = "";
 		int res = 0;
 		
+		if(modelOperacoes.equals("Divisao") && valor02.equals("0")) {
+			model.addAttribute("response", "Valor02 não pode ser 0 para divisão!");
+			return "index";
+		}
+		
 		switch (modelOperacoes) {
 		case "Soma": 
 				res = Integer.parseInt(valor01) + Integer.parseInt(valor02);
 				break;
 		case "Subtracao": 
-				res = Integer.parseInt(valor01) + Integer.parseInt(valor02);
+				res = Integer.parseInt(valor01) - Integer.parseInt(valor02);
 				break;
+		case "Multiplicacao": 
+			res = Integer.parseInt(valor01) * Integer.parseInt(valor02);
+			break;
+		case "Divisao": 
+			res = Integer.parseInt(valor01) / Integer.parseInt(valor02);
+			break;
 		}
 				
 		resposta = String.valueOf(res);
-		model.addAttribute("modelOperacoes", List.of("Soma", "Subtracao"));
+		model.addAttribute("modelOperacoes", List.of("Soma", "Subtracao", "Multiplicacao", "Divisao"));
 		model.addAttribute("response", resposta);
 		return "index";
 		
+	}
+	
+	@RequestMapping("/limpar")
+	public String limparResposta(Model model) {
+		return "redirect:/";
 	}
 
 }
